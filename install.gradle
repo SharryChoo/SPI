@@ -1,0 +1,9 @@
+apply plugin: 'com.github.dcendents.android-maven'
+
+def publishedGroupId = "com.github.SharryChoo"
+group = publishedGroupId
+
+// 用于支持中文显示
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

@@ -1,0 +1,4 @@
+include ':app'
+include ':spi-impl'
+//include ':spi-plugin'
+rootProject.name = "SPI"
