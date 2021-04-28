@@ -14,7 +14,7 @@ public @interface ServiceImpl {
     /**
      * 接口
      */
-    Class<?> api();
+    Class api();
 
     /**
      * 是否需要延时初始化，{@code true}则表示在使用时初始化，否则会在app启动时实例化

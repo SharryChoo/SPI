@@ -53,20 +53,19 @@ internal class SpiAutoRegisterTransform(val project: Project) : BaseFileScanTran
     }
 
     override fun onScanJarEntry(file: File, jarFile: JarFile, jarEntry: JarEntry) {
-        val classFilePath = jarEntry.name
-        when (classFilePath) {
+        val entryName = jarEntry.name
+        when {
             // 1. 找到代码注入的目标文件
-            ScanSetting.GENERATE_TO_CLASS_FILE_NAME -> {
+            entryName == ScanSetting.GENERATE_TO_CLASS_FILE_NAME -> {
                 mInjectClassFile = file
                 mIsJarFile = true
                 Logger.print("find contains generate jar file: " + file.absolutePath)
             }
-            // 2. 扫描 @ServiceImpl 注解修饰的 class
-            else -> {
+            // 2. 只扫描 .class 文件, 找寻 @ServiceImpl 注解修饰的 class
+            entryName.endsWith(".class") -> {
                 val inputStream: InputStream = jarFile.getInputStream(jarEntry)
                 scanAnnotation(inputStream)
                 inputStream.close()
-                Logger.print("find target entryName: $classFilePath")
             }
         }
     }
@@ -84,7 +83,6 @@ internal class SpiAutoRegisterTransform(val project: Project) : BaseFileScanTran
                 val inputStream = FileInputStream(classFile)
                 scanAnnotation(inputStream)
                 inputStream.close()
-                Logger.print("find target entryName: $classFilePath")
             }
         }
     }
@@ -113,7 +111,7 @@ internal class SpiAutoRegisterTransform(val project: Project) : BaseFileScanTran
 
     private fun scanAnnotation(inputStream: InputStream) {
         val cr = ClassReader(inputStream)
-        val cw = ClassWriter(cr, 0)
+        val cw = ClassWriter(cr, ClassWriter.COMPUTE_MAXS)
         val finder = AnnotationFinder(Opcodes.ASM5, cw)
         cr.accept(finder, ClassReader.EXPAND_FRAMES)
         // 找到了一个 SPI 标记的注解
@@ -121,8 +119,7 @@ internal class SpiAutoRegisterTransform(val project: Project) : BaseFileScanTran
             val classPath = cr.className
             mWriteSetting.injectMap[classPath] = it
             Logger.print(
-                "Find Service: api = ${finder.annotationEntry?.serviceApiPath}," +
-                        " impl=${classPath.replace("/", ".")}"
+                "find service: api = ${it.serviceApiPath}, impl=${classPath}"
             )
         }
     }

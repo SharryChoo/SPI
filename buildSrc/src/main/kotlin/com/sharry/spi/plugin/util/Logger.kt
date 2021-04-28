@@ -9,7 +9,7 @@ package com.sharry.spi.plugin.util
 object Logger {
 
     fun print(info: String) {
-        println("SRouter::AutoRegister >>> $info")
+        println("SPI::AutoRegister >>> $info")
     }
 
 }

@@ -60,8 +60,9 @@ abstract class BaseFileScanTransform : Transform() {
                         val jarFile = JarFile(destJarFile)
                         val enumeration: Enumeration<*> = jarFile.entries()
                         while (enumeration.hasMoreElements()) {
-                            val jarEntry = enumeration.nextElement() as JarEntry
-                            onScanJarEntry(destJarFile, jarFile, jarEntry)
+                            (enumeration.nextElement() as? JarEntry)?.let {
+                                onScanJarEntry(destJarFile, jarFile, it)
+                            }
                         }
                         jarFile.close()
                     }

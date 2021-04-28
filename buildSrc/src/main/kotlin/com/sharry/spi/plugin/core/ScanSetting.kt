@@ -46,11 +46,10 @@ class ScanSetting {
         /**
          * The class name for ServiceImpl.class
          */
-        const val SERVICE_IMPL_ANNOTATION_NAME = "com.sharry.spi.ServiceImpl"
+        const val SERVICE_IMPL_ANNOTATION_DESC = "Lcom/sharry/spi/ServiceImpl;"
         const val SERVICE_IMPL_ANNOTATION_API_FILED_NAME = "api"
         const val SERVICE_IMPL_ANNOTATION_DELAY_FILED_NAME = "delay"
         const val SERVICE_IMPL_ANNOTATION_SINGLETON_FILED_NAME = "singleton"
-
     }
 
 
