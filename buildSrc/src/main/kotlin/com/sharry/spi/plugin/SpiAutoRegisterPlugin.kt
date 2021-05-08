@@ -18,7 +18,7 @@ class SpiAutoRegisterPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
         val isApp = project.plugins.hasPlugin(AppPlugin::class.java)
-        // only application module needs this com.sharry.srouter.plugin to generate register code
+        // only application module needs to generate register code
         if (isApp) {
             Logger.print("Project enable spi-register")
             // register this com.sharry.srouter.plugin

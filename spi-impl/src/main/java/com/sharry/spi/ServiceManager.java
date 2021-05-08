@@ -1,5 +1,7 @@
 package com.sharry.spi;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -22,7 +24,8 @@ public class ServiceManager {
         sIsStrictMode = enable;
     }
 
-    public static <T> T getService(final Class<T> clazz) {
+    @SuppressWarnings({"unchecked", "SynchronizationOnLocalVariableOrMethodParameter"})
+    public static <T> T getService(@NotNull final Class<T> clazz) {
         if (null == clazz) {
             throw new RuntimeException("ServiceManager.getService: Null");
         }
@@ -69,7 +72,12 @@ public class ServiceManager {
         // AMS end
     }
 
-    public static <T> void register(Class<? extends T> serviceClass, Class<? extends T> implClazz, boolean delay, boolean singleton) {
+    public static <T> void register(
+            @NotNull Class<? extends T> serviceClass,
+            @NotNull Class<? extends T> implClazz,
+            boolean delay,
+            boolean singleton
+    ) {
         ServiceSpec<?> spec = new ServiceSpec<>();
         spec.implClazz = implClazz;
         spec.singleton = singleton;
