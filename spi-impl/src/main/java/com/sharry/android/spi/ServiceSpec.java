@@ -1,4 +1,4 @@
-package com.sharry.spi;
+package com.sharry.android.spi;
 
 /**
  * 服务的属性

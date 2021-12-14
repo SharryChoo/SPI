@@ -1,10 +1,10 @@
-package com.sharry.spi.plugin.base
+package com.sharry.android.spi.plugin.base
 
 import com.android.build.api.transform.*
 import com.android.build.gradle.internal.pipeline.TransformManager
-import com.sharry.spi.plugin.util.Logger
-import com.sharry.spi.plugin.util.eachFileRecurse
-import com.sharry.spi.plugin.util.toLeftSlash
+import com.sharry.android.spi.plugin.util.Logger
+import com.sharry.android.spi.plugin.util.eachFileRecurse
+import com.sharry.android.spi.plugin.util.toLeftSlash
 import groovy.io.FileType
 import org.apache.commons.codec.digest.DigestUtils
 import org.apache.commons.io.FileUtils

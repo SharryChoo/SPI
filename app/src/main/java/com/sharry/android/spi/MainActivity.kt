@@ -1,4 +1,4 @@
-package com.sharry.spi
+package com.sharry.android.spi
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton

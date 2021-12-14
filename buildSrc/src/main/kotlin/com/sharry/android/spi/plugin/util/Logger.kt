@@ -1,4 +1,4 @@
-package com.sharry.spi.plugin.util
+package com.sharry.android.spi.plugin.util
 
 /**
  *

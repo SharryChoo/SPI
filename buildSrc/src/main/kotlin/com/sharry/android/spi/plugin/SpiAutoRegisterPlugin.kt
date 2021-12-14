@@ -1,9 +1,9 @@
-package com.sharry.spi.plugin
+package com.sharry.android.spi.plugin
 
 import com.android.build.gradle.AppExtension
 import com.android.build.gradle.AppPlugin
-import com.sharry.spi.plugin.core.SpiAutoRegisterTransform
-import com.sharry.spi.plugin.util.Logger
+import com.sharry.android.spi.plugin.core.SpiAutoRegisterTransform
+import com.sharry.android.spi.plugin.util.Logger
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 

@@ -1,4 +1,4 @@
-package com.sharry.spi;
+package com.sharry.android.spi;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

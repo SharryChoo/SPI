@@ -1,4 +1,4 @@
-package com.sharry.spi
+package com.sharry.android.spi
 
 import android.content.Context
 import android.widget.Toast

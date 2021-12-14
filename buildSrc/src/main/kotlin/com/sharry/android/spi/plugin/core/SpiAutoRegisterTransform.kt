@@ -1,10 +1,10 @@
-package com.sharry.spi.plugin.core
+package com.sharry.android.spi.plugin.core
 
 import com.android.build.api.transform.*
 import com.android.build.gradle.internal.pipeline.TransformManager
-import com.sharry.spi.plugin.base.BaseFileScanTransform
-import com.sharry.spi.plugin.base.CodeGenerator
-import com.sharry.spi.plugin.util.Logger
+import com.sharry.android.spi.plugin.base.BaseFileScanTransform
+import com.sharry.android.spi.plugin.base.CodeGenerator
+import com.sharry.android.spi.plugin.util.Logger
 import org.gradle.api.Project
 import java.io.File
 import java.io.FileInputStream

@@ -1,4 +1,4 @@
-package com.sharry.spi.plugin.core
+package com.sharry.android.spi.plugin.core
 
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor

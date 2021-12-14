@@ -1,4 +1,4 @@
-package com.sharry.spi
+package com.sharry.android.spi
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

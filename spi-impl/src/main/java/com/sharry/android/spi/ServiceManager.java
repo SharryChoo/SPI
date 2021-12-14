@@ -1,6 +1,4 @@
-package com.sharry.spi;
-
-import com.sun.istack.internal.NotNull;
+package com.sharry.android.spi;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -25,7 +23,7 @@ public class ServiceManager {
     }
 
     @SuppressWarnings({"unchecked", "SynchronizationOnLocalVariableOrMethodParameter"})
-    public static <T> T getService(@NotNull final Class<T> clazz) {
+    public static <T> T getService(final Class<T> clazz) {
         if (null == clazz) {
             throw new RuntimeException("ServiceManager.getService: Null");
         }
@@ -73,8 +71,8 @@ public class ServiceManager {
     }
 
     public static <T> void register(
-            @NotNull Class<? extends T> serviceClass,
-            @NotNull Class<? extends T> implClazz,
+            Class<? extends T> serviceClass,
+            Class<? extends T> implClazz,
             boolean delay,
             boolean singleton
     ) {

@@ -1,4 +1,4 @@
-package com.sharry.spi.plugin.base
+package com.sharry.android.spi.plugin.base
 
 import org.objectweb.asm.ClassVisitor
 

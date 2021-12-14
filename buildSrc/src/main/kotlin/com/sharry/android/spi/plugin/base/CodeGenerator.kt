@@ -1,4 +1,4 @@
-package com.sharry.spi.plugin.base
+package com.sharry.android.spi.plugin.base
 
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.IOUtils
@@ -14,7 +14,7 @@ import java.util.jar.JarEntry
 import java.util.jar.JarFile
 import java.util.jar.JarOutputStream
 import java.util.zip.ZipEntry
-import com.sharry.spi.plugin.util.Logger
+import com.sharry.android.spi.plugin.util.Logger
 
 /**
  * Generate code into target file.

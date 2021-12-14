@@ -1,4 +1,4 @@
-package com.sharry.spi.plugin.core
+package com.sharry.android.spi.plugin.core
 
 import java.util.*
 
@@ -26,7 +26,7 @@ class ScanSetting {
         /**
          * The register code is generated into this class
          */
-        const val GENERATE_TO_CLASS_NAME = "com/sharry/spi/ServiceManager"
+        const val GENERATE_TO_CLASS_NAME = "com/sharry/android/spi/ServiceManager"
 
         /**
          * you know. this is the class file(or entry in jar file) name
@@ -46,7 +46,7 @@ class ScanSetting {
         /**
          * The class name for ServiceImpl.class
          */
-        const val SERVICE_IMPL_ANNOTATION_DESC = "Lcom/sharry/spi/ServiceImpl;"
+        const val SERVICE_IMPL_ANNOTATION_DESC = "Lcom/sharry/android/spi/ServiceImpl;"
         const val SERVICE_IMPL_ANNOTATION_API_FILED_NAME = "api"
         const val SERVICE_IMPL_ANNOTATION_DELAY_FILED_NAME = "delay"
         const val SERVICE_IMPL_ANNOTATION_SINGLETON_FILED_NAME = "singleton"
