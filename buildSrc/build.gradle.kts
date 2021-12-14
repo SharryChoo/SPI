@@ -2,27 +2,6 @@
 plugins {
     `kotlin-dsl`
 }
-apply(from = "../install.gradle")
-
-/**
- * 编译脚本
- */
-buildscript {
-    /**
-     * 编译时期脚本代码的仓库
-     */
-    repositories {
-        maven { setUrl("https://jitpack.io") }
-    }
-
-    /**
-     * 编译脚本代码依赖
-     */
-    dependencies {
-        classpath("com.github.dcendents:android-maven-gradle-plugin:2.1")
-    }
-
-}
 
 /**
  * 工程代码依赖的仓库
@@ -36,5 +15,10 @@ repositories {
  * 工程代码依赖
  */
 dependencies {
+//    // 引用 gradle 的 api
+//    gradleApi()
+//    // 引用 Kotlin 语法
+//    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.3.72")
+    // 引用 Android Transformer 依赖
     implementation("com.android.tools.build:gradle:3.2.1")
 }
